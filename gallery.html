@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="View our portfolio of windows and doors replacement projects. See before and after photos of our work.">
+    <title>Project Gallery - Bess Brothers Construction</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+
+        .gallery-hero {
+            background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-darker) 50%, var(--primary-blue) 100%);
+            min-height: 40vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gallery-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1440 800" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>') no-repeat center;
+            opacity: 0.3;
+            background-size: cover;
+        }
+
+        .gallery-hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 80px;
+            background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg"><path d="M0,80 C480,20 960,20 1440,80 L1440,80 L0,80 Z" fill="white"/></svg>') no-repeat bottom;
+            background-size: cover;
+        }
+
+        .gallery-hero-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: var(--space-3xl) 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .gallery-hero h1 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 700;
+            margin-bottom: var(--space-lg);
+            color: #ffffff;
+            line-height: 1.1;
+            text-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        }
+
+        .gallery-hero p {
+            font-size: var(--font-size-xl);
+            color: var(--hero-subtitle-color);
+            opacity: 0.95;
+            font-weight: 400;
+            line-height: 1.4;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .gallery-filters {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 3rem 0;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.5rem 1.5rem;
+            border: 2px solid var(--gray-medium);
+            background: var(--white);
+            border-radius: 25px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 500;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--primary-blue);
+            color: var(--white);
+            border-color: var(--primary-blue);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .gallery-item {
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .before-after-container {
+            position: relative;
+            height: 300px;
+            overflow: hidden;
+        }
+
+        .before-after-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .after-image {
+            clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
+        }
+
+        .before-after-slider {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: var(--white);
+            cursor: ew-resize;
+            z-index: 2;
+        }
+
+        .before-after-slider::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 40px;
+            height: 40px;
+            background: var(--white);
+            border-radius: 50%;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .before-after-slider::after {
+            content: '◀ ▶';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 0.8rem;
+            color: var(--text-dark);
+        }
+
+        .ba-labels {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            display: flex;
+            justify-content: space-between;
+            pointer-events: none;
+        }
+
+        .ba-label {
+            background: rgba(0, 0, 0, 0.7);
+            color: var(--white);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+
+        .gallery-info {
+            padding: 1.5rem;
+        }
+
+        .gallery-info h3 {
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .gallery-info .project-type {
+            color: var(--primary-blue);
+            font-weight: 600;
+            font-size: 0.875rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .gallery-info p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .stats-section {
+            background: var(--gray-light);
+            padding: 4rem 0;
+            margin-bottom: 4rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 3rem;
+            color: var(--primary-green);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-item p {
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">
+                <img src="images/emblem.svg" alt="Bess Brothers Construction Logo">
+                <div class="brand-text">
+                    <span class="green">BESS</span>
+                    <span class="green">BROTHERS</span>
+                    <span class="blue">CONSTRUCTION</span>
+                </div>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="#gallery" class="nav-link active">Gallery</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="gallery-hero">
+            <div class="container">
+                <div class="gallery-hero-content">
+                    <h1>Our Work Gallery</h1>
+                    <p>See the transformations we've created for homeowners like you</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="gallery-section">
+            <div class="container">
+                <div class="gallery-filters">
+                    <button class="filter-btn active" data-filter="all">All Projects</button>
+                    <button class="filter-btn" data-filter="windows">Windows</button>
+                    <button class="filter-btn" data-filter="doors">Doors</button>
+                    <button class="filter-btn" data-filter="both">Windows & Doors</button>
+                </div>
+
+                <div class="gallery-grid">
+                    <div class="gallery-item" data-category="windows">
+                        <div class="before-after-container">
+                            <img src="images/window-before-1.jpg" alt="Window before" class="before-image">
+                            <img src="images/window-after-1.jpg" alt="Window after" class="after-image">
+                            <div class="before-after-slider"></div>
+                            <div class="ba-labels">
+                                <span class="ba-label">Before</span>
+                                <span class="ba-label">After</span>
+                            </div>
+                        </div>
+                        <div class="gallery-info">
+                            <h3>Colonial Home Window Upgrade</h3>
+                            <p class="project-type">Windows Replacement</p>
+                            <p>Replaced 12 single-pane windows with energy-efficient double-hung windows, reducing energy costs by 35%.</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="doors">
+                        <div class="before-after-container">
+                            <img src="images/door-before-1.jpg" alt="Door before" class="before-image">
+                            <img src="images/door-after-1.jpg" alt="Door after" class="after-image">
+                            <div class="before-after-slider"></div>
+                            <div class="ba-labels">
+                                <span class="ba-label">Before</span>
+                                <span class="ba-label">After</span>
+                            </div>
+                        </div>
+                        <div class="gallery-info">
+                            <h3>Modern Entry Door Installation</h3>
+                            <p class="project-type">Door Replacement</p>
+                            <p>Installed a stunning fiberglass entry door with sidelights, enhancing curb appeal and security.</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="windows">
+                        <div class="before-after-container">
+                            <img src="images/window-before-2.jpg" alt="Window before" class="before-image">
+                            <img src="images/window-after-2.jpg" alt="Window after" class="after-image">
+                            <div class="before-after-slider"></div>
+                            <div class="ba-labels">
+                                <span class="ba-label">Before</span>
+                                <span class="ba-label">After</span>
+                            </div>
+                        </div>
+                        <div class="gallery-info">
+                            <h3>Bay Window Transformation</h3>
+                            <p class="project-type">Windows Replacement</p>
+                            <p>Converted a standard window to a beautiful bay window, adding space and natural light to the living room.</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="both">
+                        <div class="before-after-container">
+                            <img src="images/both-before-1.jpg" alt="Before" class="before-image">
+                            <img src="images/both-after-1.jpg" alt="After" class="after-image">
+                            <div class="before-after-slider"></div>
+                            <div class="ba-labels">
+                                <span class="ba-label">Before</span>
+                                <span class="ba-label">After</span>
+                            </div>
+                        </div>
+                        <div class="gallery-info">
+                            <h3>Complete Home Renovation</h3>
+                            <p class="project-type">Windows & Doors</p>
+                            <p>Full home upgrade with 18 windows and 3 doors, completely transforming this 1960s ranch home.</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="doors">
+                        <div class="before-after-container">
+                            <img src="images/door-before-2.jpg" alt="Door before" class="before-image">
+                            <img src="images/door-after-2.jpg" alt="Door after" class="after-image">
+                            <div class="before-after-slider"></div>
+                            <div class="ba-labels">
+                                <span class="ba-label">Before</span>
+                                <span class="ba-label">After</span>
+                            </div>
+                        </div>
+                        <div class="gallery-info">
+                            <h3>French Door Installation</h3>
+                            <p class="project-type">Door Replacement</p>
+                            <p>Replaced sliding glass door with elegant French doors, improving both aesthetics and functionality.</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="windows">
+                        <div class="before-after-container">
+                            <img src="images/window-before-3.jpg" alt="Window before" class="before-image">
+                            <img src="images/window-after-3.jpg" alt="Window after" class="after-image">
+                            <div class="before-after-slider"></div>
+                            <div class="ba-labels">
+                                <span class="ba-label">Before</span>
+                                <span class="ba-label">After</span>
+                            </div>
+                        </div>
+                        <div class="gallery-info">
+                            <h3>Historic Home Preservation</h3>
+                            <p class="project-type">Windows Replacement</p>
+                            <p>Custom-made windows to match the original 1920s style while providing modern efficiency.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Ready to Transform Your Home?</h2>
+                    <p>See how our windows and doors can enhance your home's beauty and efficiency</p>
+                    <a href="services.html#book" class="btn btn-primary btn-large">Schedule Your Consultation</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4>About Bess Brothers</h4>
+                    <p>Your trusted partner for windows and doors replacement with our unique mobile showroom service.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact Info</h4>
+                    <p>Phone: <a href="tel:+16154237450">(615) 423-7450</a></p>
+                    <p>Email: <a href="mailto:info@bessbrothers.com">info@bessbrothers.com</a></p>
+                </div>
+                <div class="footer-column">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">📘</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                        <a href="#" aria-label="LinkedIn">💼</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Bess Brothers Construction. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>

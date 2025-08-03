@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about Bess Brothers Construction - Your trusted local partner for windows and doors replacement with over 20 years of experience.">
+    <title>About Us - Bess Brothers Construction</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+
+        .about-hero {
+            background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-darker) 50%, var(--primary-blue) 100%);
+            min-height: 40vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1440 800" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>') no-repeat center;
+            opacity: 0.3;
+            background-size: cover;
+        }
+
+        .about-hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 80px;
+            background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg"><path d="M0,80 C480,20 960,20 1440,80 L1440,80 L0,80 Z" fill="white"/></svg>') no-repeat bottom;
+            background-size: cover;
+        }
+
+        .about-hero-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: var(--space-3xl) 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .about-hero h1 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 700;
+            margin-bottom: var(--space-lg);
+            color: #ffffff;
+            line-height: 1.1;
+            text-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        }
+
+        .about-hero p {
+            font-size: var(--font-size-xl);
+            color: var(--hero-subtitle-color);
+            opacity: 0.95;
+            font-weight: 400;
+            line-height: 1.4;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .story-section {
+            padding: 3rem 0;
+        }
+
+        .story-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            margin-bottom: 3rem;
+        }
+
+        .story-text h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+        }
+
+        .story-text p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+            color: var(--text-light);
+        }
+
+        .vision-mission {
+            max-width: 900px;
+            margin: 3rem auto;
+            padding: 2rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        .vision-mission h2 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            margin-top: 2rem;
+            color: var(--text-dark);
+        }
+
+        .vision-mission h2:first-child {
+            margin-top: 0;
+        }
+
+        .vision-mission p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+            color: var(--text-light);
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .value-card {
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        .value-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--primary-green);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin: 0 auto 1rem;
+        }
+
+        .team-section {
+            padding: 3rem 0;
+            background: var(--gray-light);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .team-member {
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+
+        .team-member:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .team-member-image {
+            height: 300px;
+            background: var(--gray-medium);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: var(--gray-dark);
+        }
+
+        .team-member-info {
+            padding: 1.5rem;
+        }
+
+        .team-member-info h3 {
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .team-member-info .role {
+            color: var(--primary-blue);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .certifications {
+            padding: 3rem 0;
+        }
+
+        .cert-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .cert-logo {
+            width: 150px;
+            height: 80px;
+            background: var(--gray-medium);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            color: var(--text-light);
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .why-choose {
+            background: var(--gray-light);
+            padding: 3rem 0;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: start;
+            gap: 1rem;
+        }
+
+        .feature-icon {
+            color: var(--primary-green);
+            font-size: 1.5rem;
+            margin-top: 0.2rem;
+        }
+
+        @media (max-width: 768px) {
+            .story-content {
+                grid-template-columns: 1fr;
+            }
+
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cert-logos {
+                gap: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">
+                <img src="images/emblem.svg" alt="Bess Brothers Construction Logo">
+                <div class="brand-text">
+                    <span class="green">BESS</span>
+                    <span class="green">BROTHERS</span>
+                    <span class="blue">CONSTRUCTION</span>
+                </div>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="#about" class="nav-link active">About</a>
+                <a href="gallery.html" class="nav-link">Gallery</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="about-hero">
+            <div class="container">
+                <div class="about-hero-content">
+                    <h1 class="hero-title">About Bess Brothers Construction</h1>
+                    <p class="hero-subtitle">Built on the foundation of family, honesty, and service</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="story-section">
+            <div class="container">
+                <div class="story-content">
+                    <div class="story-text">
+                        <h2>Our Story</h2>
+                        <p>Bess Brothers Construction was born from the passion of three brothers who found joy in helping homeowners and pride in doing the job right. We saw the frustration people faced with old, failing windows and doors — and we knew we could offer something better.</p>
+                        <p>Rooted in honesty, integrity, and hard work, we've built our business around treating customers with respect, delivering quality that lasts, and going above and beyond expectations. Our mission is simple: improve homes with expert craftsmanship and care, and create a team culture where our workers are valued, supported, and proud of what they do.</p>
+                        <p>As we grow, we stay committed to giving back — helping families, building trust, and making a lasting impact in the community we call home.</p>
+                    </div>
+                    <div class="story-image">
+                        <img src="images/founders.jpg" alt="Bess Brothers founders" style="width: 100%; border-radius: 10px;">
+                    </div>
+                </div>
+
+                <div class="vision-mission">
+                    <h2>Our Vision</h2>
+                    <p>At Bess Brothers Construction, we envision a company built on the foundation of family, honesty, and service — where craftsmanship and compassion go hand in hand. We exist to help homeowners transform their living spaces through high-quality window and door replacements, while ensuring peace of mind, energy efficiency, and lasting beauty.</p>
+                    <p>Our goal is to become the most trusted name in residential remodeling across Tennessee — known not just for the quality of our work, but for doing business the right way: with integrity, kindness, and genuine care. Over the next decade, we aim to expand into full-service remodeling, and to grow a team of proud, skilled professionals who share in our success and carry forward our values.</p>
+                    <p>We are committed to creating a company culture where our workers feel safe, valued, and empowered — with fair compensation, growth opportunities, and the balance to enjoy life with their families. As we grow, so does our impact: we strive to give back to the community, help those in need, and leave every project better than we found it — one home, one family at a time.</p>
+
+                    <h2>Our Mission</h2>
+                    <p>Our mission at Bess Brothers Construction is to provide honest, high-quality window and door replacement services that improve the comfort, beauty, and energy efficiency of every home we touch.</p>
+                    <p>We are committed to serving homeowners with integrity, transparency, and craftsmanship — offering expert guidance, doing what's right for the customer, and always going above and beyond expectations.</p>
+                    <p>We build more than projects — we build trust, pride in our team, and a positive impact in our community, one home at a time.</p>
+                </div>
+
+                <h2 class="section-title">Our Core Values</h2>
+                <div class="values-grid">
+                    <div class="value-card">
+                        <div class="value-icon">❤️</div>
+                        <h3>Family & Community</h3>
+                        <p>We treat every customer like family and give back to the community we call home.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">🛡️</div>
+                        <h3>Integrity & Honesty</h3>
+                        <p>We do business the right way - with transparency, fairness, and genuine care.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">🔨</div>
+                        <h3>Craftsmanship</h3>
+                        <p>Expert installation and quality that lasts - we take pride in doing the job right.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">🤝</div>
+                        <h3>Team Culture</h3>
+                        <p>We value our workers with fair compensation, growth opportunities, and work-life balance.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="certifications">
+            <div class="container">
+                <h2 class="section-title">Certifications & Partnerships</h2>
+                <p style="text-align: center; margin-bottom: 2rem;">We maintain the highest industry standards and partner with leading manufacturers</p>
+                <div class="cert-logos">
+                    <div class="cert-logo">Energy Star Partner</div>
+                    <div class="cert-logo">BBB A+ Rating</div>
+                    <div class="cert-logo">Licensed & Insured</div>
+                    <div class="cert-logo">Certified Installer</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="why-choose">
+            <div class="container">
+                <h2 class="section-title">Why Choose Bess Brothers?</h2>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <div>
+                            <h4>Mobile Showroom Experience</h4>
+                            <p>See and feel products in your home before making a decision</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <div>
+                            <h4>20+ Years of Excellence</h4>
+                            <p>Trusted by thousands of homeowners in our community</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <div>
+                            <h4>Lifetime Warranties</h4>
+                            <p>Our products and installation are backed by comprehensive warranties</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <div>
+                            <h4>Local Family Business</h4>
+                            <p>We're invested in our community and your satisfaction</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <div>
+                            <h4>No Pressure Sales</h4>
+                            <p>Take your time to decide - we're here when you're ready</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <div>
+                            <h4>Financing Available</h4>
+                            <p>Flexible payment options to fit your budget</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Experience the Bess Brothers Difference</h2>
+                    <p>Schedule your free mobile showroom consultation today</p>
+                    <a href="services.html#book" class="btn btn-primary btn-large">Schedule Free Consultation</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4>About Bess Brothers</h4>
+                    <p>Your trusted partner for windows and doors replacement with our unique mobile showroom service.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact Info</h4>
+                    <p>Phone: <a href="tel:+16154237450">(615) 423-7450</a></p>
+                    <p>Email: <a href="mailto:info@bessbrothers.com">info@bessbrothers.com</a></p>
+                </div>
+                <div class="footer-column">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">📘</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                        <a href="#" aria-label="LinkedIn">💼</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Bess Brothers Construction. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
