@@ -35,11 +35,11 @@
         .about-hero::after {
             content: '';
             position: absolute;
-            bottom: 0;
+            bottom: -6px;
             left: 0;
             right: 0;
             height: 80px;
-            background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg"><path d="M0,80 C480,20 960,20 1440,80 L1440,80 L0,80 Z" fill="white"/></svg>') no-repeat bottom;
+            background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg"><path d="M0,80 C480,20 960,20 1440,80 L1440,80 L0,80 Z" fill="white"/><path d="M-10,80 C480,20 960,20 1450,80" fill="none" stroke="%237ED321" stroke-width="6"/></svg>') no-repeat bottom;
             background-size: cover;
         }
 
@@ -266,14 +266,15 @@
             <div class="logo">
                 <img src="images/emblem.svg" alt="Bess Brothers Construction Logo">
                 <div class="brand-text">
-                    <span class="green">BESS</span>
-                    <span class="green">BROTHERS</span>
-                    <span class="blue">CONSTRUCTION</span>
+                    <span class="blue">BESS</span>
+                    <span class="blue">BROTHERS</span>
+                    <span class="green">CONSTRUCTION</span>
                 </div>
             </div>
             <div class="nav-menu">
                 <a href="index.html" class="nav-link">Home</a>
-                <a href="services.html" class="nav-link">Services</a>
+                <a href="windows.html" class="nav-link">Windows</a>
+                <a href="doors.html" class="nav-link">Doors</a>
                 <a href="#about" class="nav-link active">About</a>
                 <a href="gallery.html" class="nav-link">Gallery</a>
                 <a href="contact.html" class="nav-link">Contact</a>
@@ -288,6 +289,7 @@
 
     <main>
         <section class="about-hero">
+            <div class="grid-overlay"></div>
             <div class="container">
                 <div class="about-hero-content">
                     <h1 class="hero-title">About Bess Brothers Construction</h1>
@@ -363,50 +365,56 @@
         <section class="why-choose">
             <div class="container">
                 <h2 class="section-title">Why Choose Bess Brothers?</h2>
+                <p class="section-subtitle">Experience the New Standard in Window & Door Replacement</p>
+                
                 <div class="features-grid">
                     <div class="feature-item">
                         <span class="feature-icon">✓</span>
                         <div>
-                            <h4>Mobile Showroom Experience</h4>
-                            <p>See and feel products in your home before making a decision</p>
+                            <h4>We Bring the Showroom to You</h4>
+                            <p>No more driving to multiple stores — our mobile showroom arrives at your doorstep with real samples you can see, touch, and operate in your home's natural lighting.</p>
                         </div>
                     </div>
                     <div class="feature-item">
                         <span class="feature-icon">✓</span>
                         <div>
-                            <h4>20+ Years of Excellence</h4>
-                            <p>Trusted by thousands of homeowners in our community</p>
+                            <h4>Expert Craftsmanship</h4>
+                            <p>With decades of combined experience, our certified installers treat your home with care, ensuring precise fits, proper insulation, and flawless finishes that last.</p>
                         </div>
                     </div>
                     <div class="feature-item">
                         <span class="feature-icon">✓</span>
                         <div>
-                            <h4>Lifetime Warranties</h4>
-                            <p>Our products and installation are backed by comprehensive warranties</p>
+                            <h4>No Pressure, No Gimmicks</h4>
+                            <p>Take your time to decide. We provide honest pricing with no hidden fees, no pushy sales tactics, and clear communication throughout your project.</p>
                         </div>
                     </div>
                     <div class="feature-item">
                         <span class="feature-icon">✓</span>
                         <div>
-                            <h4>Local Family Business</h4>
-                            <p>We're invested in our community and your satisfaction</p>
+                            <h4>Local, Family-Owned</h4>
+                            <p>As Tennessee natives, we're your neighbors. We're invested in our community's trust and your satisfaction long after installation.</p>
                         </div>
                     </div>
                     <div class="feature-item">
                         <span class="feature-icon">✓</span>
                         <div>
-                            <h4>No Pressure Sales</h4>
-                            <p>Take your time to decide - we're here when you're ready</p>
+                            <h4>Energy Efficiency Guaranteed</h4>
+                            <p>Our ENERGY STAR certified products can reduce energy bills by up to 12%, keeping your home comfortable year-round while saving money.</p>
                         </div>
                     </div>
                     <div class="feature-item">
                         <span class="feature-icon">✓</span>
                         <div>
-                            <h4>Financing Available</h4>
-                            <p>Flexible payment options to fit your budget</p>
+                            <h4>Lifetime Support</h4>
+                            <p>Comprehensive warranties on products and labor, plus responsive service whenever you need us — because our relationship doesn't end at installation.</p>
                         </div>
                     </div>
                 </div>
+                
+                <p style="text-align: center; margin-top: 3rem; font-size: 1.1rem; font-weight: 600; color: var(--text-dark);">
+                    ✅ <strong>Choose Bess Brothers — Where Trust, Craft, and Clarity Come Standard.</strong>
+                </p>
             </div>
         </section>
 
@@ -415,7 +423,7 @@
                 <div class="cta-content">
                     <h2>Experience the Bess Brothers Difference</h2>
                     <p>Schedule your free mobile showroom consultation today</p>
-                    <a href="services.html#book" class="btn btn-primary btn-large">Schedule Free Consultation</a>
+                    <a href="windows.html#book" class="btn btn-primary btn-large">Schedule Free Consultation</a>
                 </div>
             </div>
         </section>
@@ -432,7 +440,8 @@
                     <h4>Quick Links</h4>
                     <ul>
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="services.html">Services</a></li>
+                        <li><a href="windows.html">Windows</a></li>
+                        <li><a href="doors.html">Doors</a></li>
                         <li><a href="#about">About</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
@@ -440,14 +449,14 @@
                 <div class="footer-column">
                     <h4>Contact Info</h4>
                     <p>Phone: <a href="tel:+16154237450">(615) 423-7450</a></p>
-                    <p>Email: <a href="mailto:info@bessbrothers.com">info@bessbrothers.com</a></p>
+                    <p>Email: <a href="mailto:business@bessbrothers.com">business@bessbrothers.com</a></p>
                 </div>
                 <div class="footer-column">
                     <h4>Follow Us</h4>
                     <div class="social-links">
-                        <a href="#" aria-label="Facebook">📘</a>
-                        <a href="#" aria-label="Instagram">📷</a>
-                        <a href="#" aria-label="LinkedIn">💼</a>
+                        <a href="#" aria-label="Facebook"><img src="images/facebook_icon.svg" alt="Facebook" width="24" height="24"></a>
+                        <a href="#" aria-label="Instagram"><img src="images/instagram_icon.svg" alt="Instagram" width="24" height="24"></a>
+                        <a href="#" aria-label="Google"><img src="images/google_icon.svg" alt="Google" width="24" height="24"></a>
                     </div>
                 </div>
             </div>

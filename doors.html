@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional door replacement by Bess Brothers Construction. Enhanced security, energy efficiency, and curb appeal. Free consultation available.">
+    <title>Doors Replacement - Security & Style | Bess Brothers Construction</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .doors-hero {
+            background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-darker) 50%, var(--primary-blue) 100%);
+            min-height: 45vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .doors-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1440 800" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>') no-repeat center;
+            opacity: 0.3;
+            background-size: cover;
+        }
+
+        .doors-hero::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            right: 0;
+            height: 80px;
+            background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg"><path d="M0,80 C480,20 960,20 1440,80 L1440,80 L0,80 Z" fill="white"/><path d="M-10,80 C480,20 960,20 1450,80" fill="none" stroke="%237ED321" stroke-width="6"/></svg>') no-repeat bottom;
+            background-size: cover;
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: var(--space-3xl) 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 700;
+            margin-bottom: var(--space-lg);
+            color: #ffffff;
+            line-height: 1.1;
+            text-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        }
+
+        .hero-content p {
+            font-size: var(--font-size-xl);
+            color: var(--hero-subtitle-color);
+            margin-bottom: var(--space-2xl);
+            opacity: 0.95;
+            font-weight: 400;
+            line-height: 1.4;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-cta-group {
+            display: flex;
+            gap: var(--space-md);
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Benefits Section */
+        .benefits-section {
+            padding: var(--space-4xl) 0;
+            background: var(--gray-light);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-xl);
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .benefit-card {
+            background: var(--white);
+            padding: var(--space-xl);
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .benefit-icon {
+            font-size: 2.5rem;
+            margin-bottom: var(--space-md);
+            display: block;
+        }
+
+        .benefit-card h3 {
+            font-size: 1.25rem;
+            color: var(--text-dark);
+            margin-bottom: var(--space-sm);
+        }
+
+        .benefit-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* Door Types Section */
+        .door-types {
+            padding: var(--space-4xl) 0;
+            background: var(--white);
+        }
+
+        .types-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-lg);
+            max-width: 1000px;
+            margin: var(--space-2xl) auto 0;
+        }
+
+        .type-card {
+            text-align: center;
+            padding: var(--space-lg);
+            border-radius: 8px;
+            background: var(--gray-light);
+            transition: all 0.3s ease;
+        }
+
+        .type-card:hover {
+            background: var(--primary-green);
+            color: var(--white);
+            transform: translateY(-4px);
+        }
+
+        .type-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: var(--space-sm);
+        }
+
+        .type-card p {
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        .type-card:hover p {
+            color: var(--white);
+        }
+
+        /* Gallery Section */
+        .gallery-preview {
+            padding: var(--space-4xl) 0;
+            background: var(--gray-light);
+        }
+
+        .door-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-xl);
+            max-width: 1000px;
+            margin: var(--space-2xl) auto;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            background: var(--gray-medium);
+            height: 300px;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: var(--white);
+            padding: var(--space-lg);
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+
+        /* Process Section */
+        .process-section {
+            padding: var(--space-4xl) 0;
+            background: var(--white);
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-xl);
+            max-width: 1000px;
+            margin: 0 auto;
+            counter-reset: step;
+        }
+
+        .process-step {
+            text-align: center;
+            position: relative;
+            counter-increment: step;
+        }
+
+        .process-step::before {
+            content: counter(step);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            background: var(--primary-green);
+            color: var(--white);
+            border-radius: 50%;
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin: 0 auto var(--space-md);
+        }
+
+        .process-step h3 {
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            margin-bottom: var(--space-sm);
+        }
+
+        .process-step p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: var(--space-4xl) 0;
+            background: var(--gray-light);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--white);
+            border-radius: 8px;
+            margin-bottom: var(--space-md);
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .faq-question {
+            padding: var(--space-lg);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--text-dark);
+            transition: background 0.2s ease;
+        }
+
+        .faq-question:hover {
+            background: var(--gray-light);
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-question::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            padding: 0 var(--space-lg);
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 var(--space-lg) var(--space-lg);
+            max-height: 300px;
+        }
+
+        .faq-answer p {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: var(--space-4xl) 0;
+            background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-darker) 50%, var(--primary-blue) 100%);
+            color: var(--text-white);
+            text-align: center;
+        }
+
+        .cta-content h2 {
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            margin-bottom: var(--space-md);
+        }
+
+        .cta-content p {
+            font-size: var(--font-size-xl);
+            margin-bottom: var(--space-2xl);
+            opacity: 0.95;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: var(--space-md);
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 768px) {
+            .benefits-grid,
+            .types-grid {
+                grid-template-columns: 1fr;
+                gap: var(--space-lg);
+            }
+
+            .door-gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .process-steps {
+                grid-template-columns: 1fr;
+                gap: var(--space-2xl);
+            }
+
+            .hero-cta-group,
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero-cta-group .btn,
+            .cta-buttons .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">
+                <img src="images/emblem.svg" alt="Bess Brothers Construction Logo">
+                <div class="brand-text">
+                    <span class="blue">BESS</span>
+                    <span class="blue">BROTHERS</span>
+                    <span class="green">CONSTRUCTION</span>
+                </div>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="windows.html" class="nav-link">Windows</a>
+                <a href="doors.html" class="nav-link active">Doors</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="gallery.html" class="nav-link">Gallery</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="doors-hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Secure Your Home with Style</h1>
+                    <p>Better security • Energy-efficient seals • Boost curb appeal • Professional fit & finish</p>
+                    <div class="hero-cta-group">
+                        <a href="#book" class="btn btn-primary btn-large">Get Free Door Quote</a>
+                        <a href="tel:+16154237450" class="btn btn-secondary btn-large">Call (615) 423-7450</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="benefits-section">
+            <div class="container">
+                <h2 class="section-title">Why Replace Your Doors?</h2>
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <span class="benefit-icon">🔒</span>
+                        <h3>Enhanced Security</h3>
+                        <p>Modern multi-point locking systems and reinforced frames protect your family</p>
+                    </div>
+                    <div class="benefit-card">
+                        <span class="benefit-icon">🌡️</span>
+                        <h3>Energy Efficiency</h3>
+                        <p>Weather-tight seals eliminate drafts and reduce heating/cooling costs</p>
+                    </div>
+                    <div class="benefit-card">
+                        <span class="benefit-icon">🏡</span>
+                        <h3>Instant Curb Appeal</h3>
+                        <p>Transform your home's entrance and increase property value</p>
+                    </div>
+                    <div class="benefit-card">
+                        <span class="benefit-icon">🛡️</span>
+                        <h3>Low Maintenance</h3>
+                        <p>Durable materials resist warping, rotting, and require minimal upkeep</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="door-types">
+            <div class="container">
+                <h2 class="section-title">Door Types We Install</h2>
+                <div class="types-grid">
+                    <div class="type-card">
+                        <h3>Entry Doors</h3>
+                        <p>Make a grand first impression</p>
+                    </div>
+                    <div class="type-card">
+                        <h3>Patio Doors</h3>
+                        <p>Connect indoor and outdoor living</p>
+                    </div>
+                    <div class="type-card">
+                        <h3>French Doors</h3>
+                        <p>Add elegance and natural light</p>
+                    </div>
+                    <div class="type-card">
+                        <h3>Sliding Doors</h3>
+                        <p>Save space with smooth operation</p>
+                    </div>
+                    <div class="type-card">
+                        <h3>Storm Doors</h3>
+                        <p>Extra protection and ventilation</p>
+                    </div>
+                    <div class="type-card">
+                        <h3>Garage Doors</h3>
+                        <p>Complete your home's exterior</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="gallery-preview">
+            <div class="container">
+                <h2 class="section-title">Recent Door Installations</h2>
+                <div class="door-gallery">
+                    <div class="gallery-item">
+                        <img src="images/door-entry.jpg" alt="Modern Entry Door">
+                        <div class="gallery-caption">
+                            <h3>Modern Entry Door</h3>
+                            <p>Fiberglass with decorative glass</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/door-patio.jpg" alt="Sliding Patio Door">
+                        <div class="gallery-caption">
+                            <h3>Sliding Patio Door</h3>
+                            <p>Energy-efficient with built-in blinds</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/door-french.jpg" alt="French Doors">
+                        <div class="gallery-caption">
+                            <h3>French Doors</h3>
+                            <p>Classic style with modern efficiency</p>
+                        </div>
+                    </div>
+                </div>
+                <p style="text-align: center; margin-top: var(--space-lg);">
+                    <a href="gallery.html" class="btn-link">View More Door Projects →</a>
+                </p>
+            </div>
+        </section>
+
+        <section class="process-section">
+            <div class="container">
+                <h2 class="section-title">Our Installation Process</h2>
+                <div class="process-steps">
+                    <div class="process-step">
+                        <h3>In-Home Consultation</h3>
+                        <p>See door samples in your home's setting</p>
+                    </div>
+                    <div class="process-step">
+                        <h3>Custom Design</h3>
+                        <p>Choose style, color, hardware, and glass</p>
+                    </div>
+                    <div class="process-step">
+                        <h3>Precise Manufacturing</h3>
+                        <p>Doors built to exact specifications</p>
+                    </div>
+                    <div class="process-step">
+                        <h3>Professional Install</h3>
+                        <p>Expert fitting with proper insulation</p>
+                    </div>
+                    <div class="process-step">
+                        <h3>Quality Assurance</h3>
+                        <p>Testing and warranty activation</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq-section">
+            <div class="container">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">How long does door installation take?</div>
+                        <div class="faq-answer">
+                            <p>Most door installations are completed in 4-6 hours per door. Entry doors may take slightly longer due to additional security features and hardware.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">What materials are best for doors?</div>
+                        <div class="faq-answer">
+                            <p>Fiberglass doors offer the best combination of durability, energy efficiency, and low maintenance. Steel doors provide excellent security, while wood offers classic beauty with more maintenance required.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Can you match my home's style?</div>
+                        <div class="faq-answer">
+                            <p>Absolutely! We offer hundreds of door styles, colors, and hardware options. Our mobile showroom brings samples to your home to ensure perfect coordination.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">What security features are available?</div>
+                        <div class="faq-answer">
+                            <p>Modern doors include multi-point locking systems, reinforced frames, impact-resistant glass options, and smart lock compatibility for maximum security.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Ready to Upgrade Your Doors?</h2>
+                    <p>Schedule your free in-home consultation today</p>
+                    <div class="cta-buttons">
+                        <a href="#book" class="btn btn-primary btn-large">Get Your Free Quote</a>
+                        <a href="tel:+16154237450" class="btn btn-secondary btn-large">Call Now: (615) 423-7450</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4>About Bess Brothers</h4>
+                    <p>Your trusted partner for windows and doors replacement with our unique mobile showroom service.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="windows.html">Windows</a></li>
+                        <li><a href="doors.html">Doors</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact Info</h4>
+                    <p>Phone: <a href="tel:+16154237450">(615) 423-7450</a></p>
+                    <p>Email: <a href="mailto:info@bessbrothers.com">info@bessbrothers.com</a></p>
+                </div>
+                <div class="footer-column">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><img src="images/facebook_icon.svg" alt="Facebook" width="24" height="24"></a>
+                        <a href="#" aria-label="Instagram"><img src="images/instagram_icon.svg" alt="Instagram" width="24" height="24"></a>
+                        <a href="#" aria-label="Google"><img src="images/google_icon.svg" alt="Google" width="24" height="24"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Bess Brothers Construction. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                faqItem.classList.toggle('active');
+                
+                // Close other open items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    if (item !== faqItem) {
+                        item.classList.remove('active');
+                    }
+                });
+            });
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
