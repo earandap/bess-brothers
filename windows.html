@@ -9,373 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        .windows-hero {
-            background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-darker) 50%, var(--primary-blue) 100%);
-            min-height: 45vh;
-            display: flex;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .windows-hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1440 800" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>') no-repeat center;
-            opacity: 0.3;
-            background-size: cover;
-        }
-
-        .windows-hero::after {
-            content: '';
-            position: absolute;
-            bottom: -6px;
-            left: 0;
-            right: 0;
-            height: 80px;
-            background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg"><path d="M0,80 C480,20 960,20 1440,80 L1440,80 L0,80 Z" fill="white"/><path d="M-10,80 C480,20 960,20 1450,80" fill="none" stroke="%237ED321" stroke-width="6"/></svg>') no-repeat bottom;
-            background-size: cover;
-        }
-
-        .hero-content {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: var(--space-3xl) 0;
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero-content h1 {
-            font-size: clamp(2.5rem, 5vw, 3.5rem);
-            font-weight: 700;
-            margin-bottom: var(--space-lg);
-            color: #ffffff;
-            line-height: 1.1;
-            text-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-        }
-
-        .hero-content p {
-            font-size: var(--font-size-xl);
-            color: var(--hero-subtitle-color);
-            margin-bottom: var(--space-2xl);
-            opacity: 0.95;
-            font-weight: 400;
-            line-height: 1.4;
-            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-        }
-
-        .hero-cta-group {
-            display: flex;
-            gap: var(--space-md);
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        /* Benefits Section */
-        .benefits-section {
-            padding: var(--space-4xl) 0;
-            background: var(--gray-light);
-        }
-
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: var(--space-xl);
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .benefit-card {
-            background: var(--white);
-            padding: var(--space-xl);
-            border-radius: 12px;
-            text-align: center;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease;
-        }
-
-        .benefit-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .benefit-icon {
-            font-size: 2.5rem;
-            margin-bottom: var(--space-md);
-            display: block;
-        }
-
-        .benefit-card h3 {
-            font-size: 1.25rem;
-            color: var(--text-dark);
-            margin-bottom: var(--space-sm);
-        }
-
-        .benefit-card p {
-            color: var(--text-light);
-            font-size: 0.95rem;
-            line-height: 1.5;
-        }
-
-        /* Trust Section */
-        .trust-section {
-            padding: var(--space-3xl) 0;
-            background: var(--white);
-        }
-
-        .trust-content {
-            max-width: 1000px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .trust-badges {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: var(--space-3xl);
-            flex-wrap: wrap;
-            margin-top: var(--space-2xl);
-        }
-
-        .trust-badge img {
-            height: 60px;
-            opacity: 0.8;
-            transition: opacity 0.3s ease;
-        }
-
-        .trust-badge:hover img {
-            opacity: 1;
-        }
-
-        /* Gallery Section */
-        .gallery-preview {
-            padding: var(--space-4xl) 0;
-            background: var(--gray-light);
-        }
-
-        .before-after-slider {
-            max-width: 800px;
-            margin: var(--space-2xl) auto;
-            position: relative;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .slider-container {
-            position: relative;
-            height: 400px;
-            background: var(--gray-medium);
-        }
-
-        .slider-image {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .slider-after {
-            clip-path: inset(0 0 0 50%);
-        }
-
-        .slider-handle {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            width: 4px;
-            background: var(--white);
-            cursor: ew-resize;
-            transform: translateX(-50%);
-        }
-
-        .slider-handle::before {
-            content: '◀ ▶';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: var(--white);
-            padding: 0.5rem;
-            border-radius: 50%;
-            font-size: 0.75rem;
-            white-space: nowrap;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-        }
-
-        /* Process Section */
-        .process-section {
-            padding: var(--space-4xl) 0;
-            background: var(--white);
-        }
-
-        .process-steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: var(--space-xl);
-            max-width: 1000px;
-            margin: 0 auto;
-            counter-reset: step;
-        }
-
-        .process-step {
-            text-align: center;
-            position: relative;
-            counter-increment: step;
-        }
-
-        .process-step::before {
-            content: counter(step);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 48px;
-            height: 48px;
-            background: var(--primary-green);
-            color: var(--white);
-            border-radius: 50%;
-            font-size: 1.25rem;
-            font-weight: 700;
-            margin: 0 auto var(--space-md);
-        }
-
-        .process-step h3 {
-            font-size: 1.1rem;
-            color: var(--text-dark);
-            margin-bottom: var(--space-sm);
-        }
-
-        .process-step p {
-            color: var(--text-light);
-            font-size: 0.95rem;
-            line-height: 1.5;
-        }
-
-        /* FAQ Section */
-        .faq-section {
-            padding: var(--space-4xl) 0;
-            background: var(--gray-light);
-        }
-
-        .faq-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .faq-item {
-            background: var(--white);
-            border-radius: 8px;
-            margin-bottom: var(--space-md);
-            overflow: hidden;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-        }
-
-        .faq-question {
-            padding: var(--space-lg);
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-weight: 600;
-            color: var(--text-dark);
-            transition: background 0.2s ease;
-        }
-
-        .faq-question:hover {
-            background: var(--gray-light);
-        }
-
-        .faq-question::after {
-            content: '+';
-            font-size: 1.5rem;
-            transition: transform 0.3s ease;
-        }
-
-        .faq-item.active .faq-question::after {
-            transform: rotate(45deg);
-        }
-
-        .faq-answer {
-            padding: 0 var(--space-lg);
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease, padding 0.3s ease;
-        }
-
-        .faq-item.active .faq-answer {
-            padding: 0 var(--space-lg) var(--space-lg);
-            max-height: 300px;
-        }
-
-        .faq-answer p {
-            color: var(--text-light);
-            line-height: 1.6;
-        }
-
-        /* CTA Section */
-        .cta-section {
-            padding: var(--space-4xl) 0;
-            background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-darker) 50%, var(--primary-blue) 100%);
-            color: var(--text-white);
-            text-align: center;
-        }
-
-        .cta-content h2 {
-            font-size: clamp(2rem, 4vw, 2.5rem);
-            margin-bottom: var(--space-md);
-        }
-
-        .cta-content p {
-            font-size: var(--font-size-xl);
-            margin-bottom: var(--space-2xl);
-            opacity: 0.95;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: var(--space-md);
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        @media (max-width: 768px) {
-            .benefits-grid {
-                grid-template-columns: 1fr;
-                gap: var(--space-lg);
-            }
-
-            .trust-badges {
-                gap: var(--space-xl);
-            }
-
-            .process-steps {
-                grid-template-columns: 1fr;
-                gap: var(--space-2xl);
-            }
-
-            .hero-cta-group,
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .hero-cta-group .btn,
-            .cta-buttons .btn {
-                width: 100%;
-                max-width: 300px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="css/windows.css">
 </head>
 <body>
     <header class="header">
@@ -411,7 +45,7 @@
                     <h1>Transform Your Home with Energy-Efficient Windows</h1>
                     <p>Save on energy bills • Eliminate drafts • Enhance curb appeal • Professional installation</p>
                     <div class="hero-cta-group">
-                        <a href="#book" class="btn btn-primary btn-large">Get Free Window Quote</a>
+                        <button class="btn btn-primary btn-large open-consultation-modal">Get Free Window Quote</button>
                         <a href="tel:+16154237450" class="btn btn-secondary btn-large">Call (615) 423-7450</a>
                     </div>
                 </div>
@@ -442,6 +76,9 @@
                         <h3>Custom Styles</h3>
                         <p>Match any home aesthetic with various styles, colors, and finishes</p>
                     </div>
+                </div>
+                <div style="text-align: center; margin-top: var(--space-2xl);">
+                    <button class="btn btn-primary btn-large open-consultation-modal">Get Your Free Quote Now</button>
                 </div>
             </div>
         </section>
@@ -507,6 +144,13 @@
                         <p>Quality check and warranty registration</p>
                     </div>
                 </div>
+                <div style="text-align: center; margin-top: var(--space-2xl);">
+                    <p style="font-size: 1.1rem; color: var(--text-dark); margin-bottom: var(--space-lg);">Ready to get started with your window replacement project?</p>
+                    <div class="cta-buttons">
+                        <button class="btn btn-primary btn-large open-consultation-modal">Schedule Consultation</button>
+                        <a href="tel:+16154237450" class="btn btn-secondary btn-large">Call (615) 423-7450</a>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -542,13 +186,13 @@
             </div>
         </section>
 
-        <section class="cta-section">
+        <section class="windows-cta">
             <div class="container">
                 <div class="cta-content">
                     <h2>Ready to Save on Energy Bills?</h2>
-                    <p>Schedule your free in-home consultation today</p>
+                    <p>Schedule your free consultation or call us directly</p>
                     <div class="cta-buttons">
-                        <a href="#book" class="btn btn-primary btn-large">Get Your Free Quote</a>
+                        <button class="btn btn-primary btn-large open-consultation-modal">Get Your Free Quote</button>
                         <a href="tel:+16154237450" class="btn btn-secondary btn-large">Call Now: (615) 423-7450</a>
                     </div>
                 </div>

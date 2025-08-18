@@ -628,3 +628,11 @@ function openConsultationModal() {
         modal.classList.add('show');
     }
 }
+
+// Add event listeners for all consultation modal buttons
+document.addEventListener('DOMContentLoaded', function() {
+    const modalButtons = document.querySelectorAll('.open-consultation-modal');
+    modalButtons.forEach(button => {
+        button.addEventListener('click', openConsultationModal);
+    });
+});
