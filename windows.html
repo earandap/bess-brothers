@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Energy-efficient window replacement by Bess Brothers Construction. Save 12% on energy bills with Pella Vinyl 250 Series windows. Free consultation available.">
     <title>Windows Replacement - Save on Energy Bills | Bess Brothers Construction</title>
+    <link rel="icon" type="image/jpeg" href="images/favicon.jpg">
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -45,7 +46,7 @@
                     <h1>Transform Your Home with Energy-Efficient Windows</h1>
                     <p>Save on energy bills • Eliminate drafts • Enhance curb appeal • Professional installation</p>
                     <div class="hero-cta-group">
-                        <button class="btn btn-primary btn-large open-consultation-modal">Get Free Window Quote</button>
+                        <button class="btn btn-primary btn-large open-consultation-modal">FREE CONSULTATION</button>
                         <a href="tel:+16154237450" class="btn btn-secondary btn-large">Call (615) 423-7450</a>
                     </div>
                 </div>
@@ -78,7 +79,7 @@
                     </div>
                 </div>
                 <div style="text-align: center; margin-top: var(--space-2xl);">
-                    <button class="btn btn-primary btn-large open-consultation-modal">Get Your Free Quote Now</button>
+                    <button class="btn btn-primary btn-large open-consultation-modal">FREE CONSULTATION</button>
                 </div>
             </div>
         </section>
@@ -100,22 +101,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <section class="gallery-preview">
-            <div class="container">
-                <h2 class="section-title">See the Transformation</h2>
-                <div class="before-after-slider">
-                    <div class="slider-container">
-                        <img src="images/window-before.jpg" alt="Window Before" class="slider-image">
-                        <img src="images/window-after.jpg" alt="Window After" class="slider-image slider-after">
-                        <div class="slider-handle"></div>
-                    </div>
-                </div>
-                <p style="text-align: center; margin-top: var(--space-lg);">
-                    <a href="gallery.html" class="btn-link">View More Window Projects →</a>
-                </p>
             </div>
         </section>
 
@@ -147,7 +132,7 @@
                 <div style="text-align: center; margin-top: var(--space-2xl);">
                     <p style="font-size: 1.1rem; color: var(--text-dark); margin-bottom: var(--space-lg);">Ready to get started with your window replacement project?</p>
                     <div class="cta-buttons">
-                        <button class="btn btn-primary btn-large open-consultation-modal">Schedule Consultation</button>
+                        <button class="btn btn-primary btn-large open-consultation-modal">FREE CONSULTATION</button>
                         <a href="tel:+16154237450" class="btn btn-secondary btn-large">Call (615) 423-7450</a>
                     </div>
                 </div>
@@ -192,7 +177,7 @@
                     <h2>Ready to Save on Energy Bills?</h2>
                     <p>Schedule your free consultation or call us directly</p>
                     <div class="cta-buttons">
-                        <button class="btn btn-primary btn-large open-consultation-modal">Get Your Free Quote</button>
+                        <button class="btn btn-primary btn-large open-consultation-modal">FREE CONSULTATION</button>
                         <a href="tel:+16154237450" class="btn btn-secondary btn-large">Call Now: (615) 423-7450</a>
                     </div>
                 </div>
@@ -242,7 +227,7 @@
             question.addEventListener('click', () => {
                 const faqItem = question.parentElement;
                 faqItem.classList.toggle('active');
-                
+
                 // Close other open items
                 document.querySelectorAll('.faq-item').forEach(item => {
                     if (item !== faqItem) {
@@ -256,24 +241,24 @@
         const slider = document.querySelector('.before-after-slider');
         const handle = document.querySelector('.slider-handle');
         const afterImage = document.querySelector('.slider-after');
-        
+
         if (slider && handle && afterImage) {
             let isDown = false;
-            
+
             const moveSlider = (x) => {
                 const rect = slider.getBoundingClientRect();
                 const percent = Math.max(0, Math.min(100, ((x - rect.left) / rect.width) * 100));
                 handle.style.left = percent + '%';
                 afterImage.style.clipPath = `inset(0 0 0 ${percent}%)`;
             };
-            
+
             handle.addEventListener('mousedown', () => isDown = true);
             document.addEventListener('mouseup', () => isDown = false);
             document.addEventListener('mousemove', (e) => {
                 if (!isDown) return;
                 moveSlider(e.clientX);
             });
-            
+
             // Touch support
             handle.addEventListener('touchstart', () => isDown = true);
             document.addEventListener('touchend', () => isDown = false);
