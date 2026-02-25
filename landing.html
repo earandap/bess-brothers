@@ -658,22 +658,59 @@ p { margin-bottom: var(--space-md); }
    ============================================ */
 .process-section {
     padding: var(--space-4xl) 0;
-    background: var(--white);
+    background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-darker) 50%, #1a3a5c 100%);
+    color: var(--text-white);
+    position: relative;
+}
+
+.process-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1440 800" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="procGrid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23procGrid)"/></svg>') no-repeat center;
+    opacity: 0.5;
+    background-size: cover;
+}
+
+.process-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+.process-section .section-title {
+    color: var(--text-white);
 }
 
 .process-steps {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: var(--space-xl);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0;
     max-width: 1100px;
     margin: 0 auto;
     counter-reset: step;
+    position: relative;
 }
 
 .process-step {
     text-align: center;
     position: relative;
     counter-increment: step;
+    flex: 1;
+    padding: 0 var(--space-sm);
+}
+
+.process-step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 24px;
+    left: calc(50% + 28px);
+    right: calc(-50% + 28px);
+    height: 2px;
+    background: rgba(126, 211, 33, 0.4);
 }
 
 .process-step::before {
@@ -689,16 +726,19 @@ p { margin-bottom: var(--space-md); }
     font-size: 1.25rem;
     font-weight: 700;
     margin: 0 auto var(--space-md);
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 0 0 4px rgba(126, 211, 33, 0.2);
 }
 
 .process-step h3 {
     font-size: 1.1rem;
-    color: var(--text-dark);
+    color: var(--text-white);
     margin-bottom: var(--space-sm);
 }
 
 .process-step p {
-    color: var(--text-light);
+    color: rgba(255, 255, 255, 0.7);
     font-size: 0.95rem;
     line-height: 1.5;
 }
@@ -710,7 +750,7 @@ p { margin-bottom: var(--space-md); }
 
 .process-cta p {
     font-size: var(--font-size-xl);
-    color: var(--text-dark);
+    color: var(--text-white);
     margin-bottom: var(--space-lg);
     font-weight: 500;
 }
@@ -720,6 +760,16 @@ p { margin-bottom: var(--space-md); }
     gap: var(--space-md);
     justify-content: center;
     flex-wrap: wrap;
+}
+
+.process-section .btn-outline-dark {
+    color: var(--text-white);
+    border-color: var(--text-white);
+}
+
+.process-section .btn-outline-dark:hover {
+    background: var(--text-white);
+    color: var(--bg-dark);
 }
 
 /* ============================================
@@ -881,12 +931,12 @@ p { margin-bottom: var(--space-md); }
     height: 48px;
     border-radius: 50%;
     object-fit: cover;
-    border: 2px solid var(--gray-medium);
+    overflow: hidden;
+    flex-shrink: 0;
     transition: var(--transition-smooth);
 }
 
 .google-review:hover .author-photo {
-    border-color: var(--primary-green);
     transform: scale(1.05);
 }
 
@@ -1458,8 +1508,20 @@ p { margin-bottom: var(--space-md); }
     .why-choose-item h3 { font-size: var(--font-size-base); }
 
     .process-steps {
-        grid-template-columns: 1fr;
-        gap: var(--space-2xl);
+        flex-direction: column;
+        align-items: center;
+        gap: var(--space-xl);
+    }
+
+    .process-step { max-width: 300px; }
+
+    .process-step:not(:last-child)::after {
+        top: 48px;
+        left: 50%;
+        right: auto;
+        width: 2px;
+        height: calc(100% + var(--space-xl));
+        transform: translateX(-50%);
     }
 
     .cta-buttons {
@@ -1873,7 +1935,7 @@ p { margin-bottom: var(--space-md); }
                     <div class="testimonial-card google-review animate-on-scroll">
                         <div class="review-header">
                             <div class="review-author">
-                                <img src="https://ui-avatars.io/api/?name=Sarah+Johnson&background=7ED321&color=fff&size=128" alt="Sarah Johnson" class="author-photo" loading="lazy">
+                                <svg class="author-photo" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="24" cy="24" r="24" fill="#e5e7eb"/><circle cx="24" cy="18" r="8" fill="#9ca3af"/><path d="M6 44c0-10 8-16 18-16s18 6 18 16" fill="#9ca3af"/></svg>
                                 <div class="author-info">
                                     <h4 class="author-name">Sarah Johnson</h4>
                                     <span class="review-time">2 weeks ago</span>
@@ -1897,7 +1959,7 @@ p { margin-bottom: var(--space-md); }
                     <div class="testimonial-card google-review animate-on-scroll">
                         <div class="review-header">
                             <div class="review-author">
-                                <img src="https://ui-avatars.io/api/?name=Mike+Thompson&background=0066FF&color=fff&size=128" alt="Mike Thompson" class="author-photo" loading="lazy">
+                                <svg class="author-photo" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="24" cy="24" r="24" fill="#e5e7eb"/><circle cx="24" cy="18" r="8" fill="#9ca3af"/><path d="M6 44c0-10 8-16 18-16s18 6 18 16" fill="#9ca3af"/></svg>
                                 <div class="author-info">
                                     <h4 class="author-name">Mike Thompson</h4>
                                     <span class="review-time">1 month ago</span>
@@ -1921,7 +1983,7 @@ p { margin-bottom: var(--space-md); }
                     <div class="testimonial-card google-review animate-on-scroll">
                         <div class="review-header">
                             <div class="review-author">
-                                <img src="https://ui-avatars.io/api/?name=Jennifer+Davis&background=7ED321&color=fff&size=128" alt="Jennifer Davis" class="author-photo" loading="lazy">
+                                <svg class="author-photo" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="24" cy="24" r="24" fill="#e5e7eb"/><circle cx="24" cy="18" r="8" fill="#9ca3af"/><path d="M6 44c0-10 8-16 18-16s18 6 18 16" fill="#9ca3af"/></svg>
                                 <div class="author-info">
                                     <h4 class="author-name">Jennifer Davis</h4>
                                     <span class="review-time">6 weeks ago</span>
@@ -1945,7 +2007,7 @@ p { margin-bottom: var(--space-md); }
                     <div class="testimonial-card google-review animate-on-scroll">
                         <div class="review-header">
                             <div class="review-author">
-                                <img src="https://ui-avatars.io/api/?name=Robert+Chen&background=0066FF&color=fff&size=128" alt="Robert Chen" class="author-photo" loading="lazy">
+                                <svg class="author-photo" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="24" cy="24" r="24" fill="#e5e7eb"/><circle cx="24" cy="18" r="8" fill="#9ca3af"/><path d="M6 44c0-10 8-16 18-16s18 6 18 16" fill="#9ca3af"/></svg>
                                 <div class="author-info">
                                     <h4 class="author-name">Robert Chen</h4>
                                     <span class="review-time">2 months ago</span>
@@ -1969,7 +2031,7 @@ p { margin-bottom: var(--space-md); }
                     <div class="testimonial-card google-review animate-on-scroll">
                         <div class="review-header">
                             <div class="review-author">
-                                <img src="https://ui-avatars.io/api/?name=Lisa+Martinez&background=7ED321&color=fff&size=128" alt="Lisa Martinez" class="author-photo" loading="lazy">
+                                <svg class="author-photo" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="24" cy="24" r="24" fill="#e5e7eb"/><circle cx="24" cy="18" r="8" fill="#9ca3af"/><path d="M6 44c0-10 8-16 18-16s18 6 18 16" fill="#9ca3af"/></svg>
                                 <div class="author-info">
                                     <h4 class="author-name">Lisa Martinez</h4>
                                     <span class="review-time">3 months ago</span>
