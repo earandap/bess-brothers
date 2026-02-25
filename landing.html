@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Bess Brothers Construction - Tennessee's trusted windows and doors replacement company. Experience our unique mobile showroom service. Free consultations available.">
     <title>Bess Brothers Construction - Windows & Doors Replacement | Mobile Showroom</title>
+    <meta property="og:title" content="Bess Brothers Construction - Windows & Doors Replacement">
+    <meta property="og:description" content="Tennessee's trusted windows and doors replacement company. Experience our unique mobile showroom service. Free consultations available.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_US">
     <link rel="icon" type="image/jpeg" href="images/favicon.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -448,6 +452,49 @@ p { margin-bottom: var(--space-md); }
     margin-bottom: var(--space-xl);
     color: var(--text-dark);
     font-weight: 600;
+}
+
+/* ============================================
+   7b. SOCIAL PROOF STATS BAR
+   ============================================ */
+.stats-bar {
+    padding: var(--space-2xl) 0;
+    background: var(--white);
+    border-bottom: 1px solid var(--gray-medium);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-xl);
+    text-align: center;
+}
+
+.stat-item {
+    padding: var(--space-md);
+}
+
+.stat-number {
+    font-size: var(--font-size-4xl);
+    font-weight: 700;
+    color: var(--primary-blue);
+    line-height: 1.1;
+    margin-bottom: var(--space-xs);
+}
+
+.stat-label {
+    font-size: var(--font-size-sm);
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 500;
+}
+
+.stats-bar .service-area {
+    text-align: center;
+    margin-top: var(--space-lg);
+    font-size: var(--font-size-sm);
+    color: var(--text-muted);
 }
 
 /* ============================================
@@ -1359,6 +1406,9 @@ p { margin-bottom: var(--space-md); }
     .nav-menu.active .nav-link:last-child { border-bottom: none; }
     .nav-menu.active .nav-link:hover { color: var(--primary-green); }
 
+    .stats-grid { grid-template-columns: repeat(2, 1fr); gap: var(--space-md); }
+    .stat-number { font-size: var(--font-size-3xl); }
+
     .hero { min-height: 80vh; }
     .hero-gradient { min-height: 80vh; }
 
@@ -1523,6 +1573,7 @@ p { margin-bottom: var(--space-md); }
     html { scroll-behavior: auto; }
 }
     </style>
+    <noscript><style>.animate-on-scroll { opacity: 1; transform: none; }</style></noscript>
 </head>
 <body>
     <!-- ============================================
@@ -1574,6 +1625,33 @@ p { margin-bottom: var(--space-md); }
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             SOCIAL PROOF STATS BAR
+             ============================================ -->
+        <section class="stats-bar">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-item animate-on-scroll">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">Homes Transformed</div>
+                    </div>
+                    <div class="stat-item animate-on-scroll">
+                        <div class="stat-number">10+</div>
+                        <div class="stat-label">Years of Experience</div>
+                    </div>
+                    <div class="stat-item animate-on-scroll">
+                        <div class="stat-number">4.8</div>
+                        <div class="stat-label">Google Rating</div>
+                    </div>
+                    <div class="stat-item animate-on-scroll">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Satisfaction Guarantee</div>
+                    </div>
+                </div>
+                <p class="service-area">Proudly serving Nashville and Middle Tennessee</p>
             </div>
         </section>
 
@@ -1743,6 +1821,24 @@ p { margin-bottom: var(--space-md); }
                             <p>Yes, we offer flexible financing options including 0% interest for qualified buyers. Ask about our monthly payment plans during your consultation.</p>
                         </div>
                     </div>
+                    <div class="faq-item">
+                        <div class="faq-question" role="button" tabindex="0" aria-expanded="false">What brands do you carry?</div>
+                        <div class="faq-answer">
+                            <p>We carry top-tier brands including Pella, Andersen, and Marvin. Our mobile showroom lets you see and compare actual product samples side by side in the comfort of your home.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" role="button" tabindex="0" aria-expanded="false">Do I need to be home during installation?</div>
+                        <div class="faq-answer">
+                            <p>We recommend having someone present at the start of installation to go over final details. After that, our team works independently. We'll walk you through everything upon completion before we leave.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" role="button" tabindex="0" aria-expanded="false">How do I prepare for installation day?</div>
+                        <div class="faq-answer">
+                            <p>Clear about 3 feet of space around each window or door being replaced. Move fragile items away from work areas. We handle the rest, including laying down protective coverings and cleaning up when we're done.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -1769,7 +1865,7 @@ p { margin-bottom: var(--space-md); }
                             <span class="star filled">&#9733;</span>
                             <span class="star filled">&#9733;</span>
                         </div>
-                        <span class="rating-count">(5 reviews)</span>
+                        <span class="rating-count">Google Reviews</span>
                     </div>
                 </h2>
                 <div class="testimonials-grid">
@@ -1993,7 +2089,7 @@ p { margin-bottom: var(--space-md); }
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Bess Brothers Construction. All rights reserved.</p>
+                <p>&copy; 2026 Bess Brothers Construction. All rights reserved.</p>
             </div>
         </div>
     </footer>
