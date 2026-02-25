@@ -376,7 +376,8 @@ p { margin-bottom: var(--space-md); }
 }
 
 .hero-gradient {
-    background: linear-gradient(180deg, #0a1628 0%, #1e3a5f 25%, #2d5a87 50%, #3b7097 75%, #5a9cb7 100%);
+    background: linear-gradient(180deg, rgba(10, 22, 40, 0.7) 0%, rgba(30, 58, 95, 0.6) 50%, rgba(59, 112, 151, 0.5) 100%),
+                url('images/hero-bg.png') center/cover no-repeat;
     width: 100%;
     min-height: 100vh;
     display: flex;
@@ -393,7 +394,7 @@ p { margin-bottom: var(--space-md); }
     right: 0;
     bottom: 0;
     background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1440 800" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>') no-repeat center;
-    opacity: 0.3;
+    opacity: 0.15;
     background-size: cover;
 }
 
