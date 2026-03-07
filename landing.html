@@ -1087,28 +1087,18 @@ p { margin-bottom: var(--space-md); }
     background: var(--white);
 }
 
-.about-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-2xl);
-    align-items: start;
+.about-story-centered {
+    margin-bottom: var(--space-xl);
 }
 
-.about-story h3,
-.about-values h3 {
-    font-size: var(--font-size-2xl);
-    margin-bottom: var(--space-lg);
-    color: var(--text-dark);
-}
-
-.about-story p {
+.about-story-centered p {
     color: var(--text-light);
     line-height: 1.7;
 }
 
 .values-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
     gap: var(--space-md);
 }
 
@@ -1518,10 +1508,6 @@ p { margin-bottom: var(--space-md); }
         gap: var(--space-xl);
     }
 
-    .about-grid {
-        grid-template-columns: 1fr;
-    }
-
     .values-grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -1685,6 +1671,7 @@ p { margin-bottom: var(--space-md); }
     .testimonial-card.google-review { padding: var(--space-lg); }
 
     .about-snippet { padding: var(--space-xl) 0; }
+    .about-snippet .container { padding: 0 var(--space-lg); }
 }
 
 @media (max-width: 480px) {
@@ -1801,7 +1788,7 @@ p { margin-bottom: var(--space-md); }
                 <div class="stats-grid">
                     <div class="stat-item animate-on-scroll">
                         <div class="stat-number" data-target="500" data-suffix="+">0</div>
-                        <div class="stat-label">Windows & Doors Installed</div>
+                        <div class="stat-label">Homes transformed</div>
                     </div>
                     <div class="stat-item animate-on-scroll">
                         <div class="stat-number" data-target="5" data-suffix="+">0</div>
@@ -1834,8 +1821,9 @@ p { margin-bottom: var(--space-md); }
                             </picture>
                         </div>
                         <div class="service-content">
-                            <h3>Windows Replacement</h3>
-                            <p>Upgrade to energy-efficient windows that cut your heating and cooling costs while enhancing your home's beauty and comfort.</p>
+                            <h3>Pella&reg; 250 Series Windows</h3>
+                            <p>Energy-efficient vinyl windows with 52% stronger frames, interior sash corner welds for enhanced durability, and Pella's most popular design options.</p>
+                            <p><strong>Limited Lifetime Warranty</strong></p>
                             <button class="btn-link open-consultation-modal">Learn More &rarr;</button>
                         </div>
                     </div>
@@ -1850,8 +1838,9 @@ p { margin-bottom: var(--space-md); }
                             </picture>
                         </div>
                         <div class="service-content">
-                            <h3>Doors Replacement</h3>
-                            <p>Secure your home with stylish, durable doors that boost curb appeal and provide peace of mind for years to come.</p>
+                            <h3>ProVia&reg; Legacy&trade; Steel Doors</h3>
+                            <p>Secure and beautiful. 20-gauge steel doors with 49% more strength than standard, ENERGY STAR&reg; certified insulation, and customizable woodgrain or smooth steel finishes.</p>
+                            <p><strong>Transferable Lifetime Limited Warranty</strong></p>
                             <button class="btn-link open-consultation-modal">Learn More &rarr;</button>
                         </div>
                     </div>
@@ -2054,14 +2043,13 @@ p { margin-bottom: var(--space-md); }
         <section class="about-snippet" id="about">
             <div class="container">
                 <h2 class="section-title">About Bess Brothers</h2>
-                <div class="about-grid">
-                    <div class="about-story animate-on-scroll">
-                        <h3>Our Story</h3>
-                        <p>Bess Brothers Construction was born from the passion of three brothers who found joy in helping homeowners and pride in doing the job right. We saw the frustration people faced with old, failing windows and doors &mdash; and we knew we could offer something better.</p>
-                        <p>Rooted in honesty, integrity, and hard work, we've built our business around treating customers with respect, delivering quality that lasts, and going above and beyond expectations.</p>
-                    </div>
-                    <div class="about-values animate-on-scroll">
-                        <h3>Our Values</h3>
+                <div class="about-story-centered animate-on-scroll">
+                    <p>Bess Brothers Construction was founded by three brothers who share a passion for craftsmanship and a commitment to helping homeowners improve their homes the right way.</p>
+                    <p>Our journey began in the field, working as subcontractors for some of the largest remodeling companies in the country. Over the years, we installed windows and doors in hundreds of homes, gaining invaluable hands-on experience and learning the level of precision required to deliver exceptional results.</p>
+                    <p>Through that experience, we realized homeowners deserved more than just a standard installation &mdash; they deserved a company that truly cared about the quality of the work and the experience they received. With that vision, we created Bess Brothers Construction.</p>
+                    <p>Today, we work directly with homeowners to provide high-quality window and door replacement solutions designed to enhance comfort, energy efficiency, and the beauty of every home.</p>
+                </div>
+                <div class="about-values-row animate-on-scroll">
                         <div class="values-grid">
                             <div class="value-card">
                                 <div class="value-icon">
@@ -2092,7 +2080,6 @@ p { margin-bottom: var(--space-md); }
                                 <p>We value our workers with fair compensation, growth opportunities, and work-life balance.</p>
                             </div>
                         </div>
-                    </div>
                 </div>
             </div>
         </section>
