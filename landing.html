@@ -504,7 +504,7 @@ p { margin-bottom: var(--space-md); }
 
 .stats-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: var(--space-xl);
     text-align: center;
 }
@@ -1006,6 +1006,16 @@ p { margin-bottom: var(--space-md); }
     transition: var(--transition-smooth);
 }
 
+.author-avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: var(--font-size-sm);
+    color: var(--white);
+    letter-spacing: 0.05em;
+}
+
 .google-review:hover .author-photo {
     transform: scale(1.05);
 }
@@ -1074,7 +1084,7 @@ p { margin-bottom: var(--space-md); }
    ============================================ */
 .about-snippet {
     padding: var(--space-4xl) 0;
-    background: var(--gray-light);
+    background: var(--white);
 }
 
 .about-grid {
@@ -1116,9 +1126,24 @@ p { margin-bottom: var(--space-md); }
 }
 
 .value-icon {
-    font-size: 2rem;
-    margin-bottom: var(--space-sm);
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    margin: 0 auto var(--space-sm);
+    background: linear-gradient(135deg, #0057E2 0%, #90D14F 100%);
+    border-radius: 12px;
+}
+
+.value-icon svg {
+    width: 24px;
+    height: 24px;
+    stroke: #fff;
+    stroke-width: 2;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
 }
 
 .value-card h4 {
@@ -1534,7 +1559,7 @@ p { margin-bottom: var(--space-md); }
     .nav-menu.active .nav-link:last-child { border-bottom: none; }
     .nav-menu.active .nav-link:hover { color: var(--primary-green); }
 
-    .stats-grid { grid-template-columns: repeat(2, 1fr); gap: var(--space-md); }
+    .stats-grid { grid-template-columns: 1fr; gap: var(--space-md); }
     .stat-number { font-size: var(--font-size-3xl); }
 
     .hero { min-height: 80vh; }
@@ -1775,19 +1800,15 @@ p { margin-bottom: var(--space-md); }
             <div class="container">
                 <div class="stats-grid">
                     <div class="stat-item animate-on-scroll">
-                        <div class="stat-number">500+</div>
-                        <div class="stat-label">Homes Transformed</div>
+                        <div class="stat-number" data-target="500" data-suffix="+">0</div>
+                        <div class="stat-label">Windows & Doors Installed</div>
                     </div>
                     <div class="stat-item animate-on-scroll">
-                        <div class="stat-number">10+</div>
+                        <div class="stat-number" data-target="5" data-suffix="+">0</div>
                         <div class="stat-label">Years of Experience</div>
                     </div>
                     <div class="stat-item animate-on-scroll">
-                        <div class="stat-number">4.8</div>
-                        <div class="stat-label">Google Rating</div>
-                    </div>
-                    <div class="stat-item animate-on-scroll">
-                        <div class="stat-number">100%</div>
+                        <div class="stat-number" data-target="100" data-suffix="%">0</div>
                         <div class="stat-label">Satisfaction Guarantee</div>
                     </div>
                 </div>
@@ -2008,7 +2029,7 @@ p { margin-bottom: var(--space-md); }
                     <div class="testimonial-card google-review animate-on-scroll">
                         <div class="review-header">
                             <div class="review-author">
-                                <svg class="author-photo" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="24" cy="24" r="24" fill="#e5e7eb"/><circle cx="24" cy="18" r="8" fill="#9ca3af"/><path d="M6 44c0-10 8-16 18-16s18 6 18 16" fill="#9ca3af"/></svg>
+                                <div class="author-photo author-avatar" style="background:#4285F4">SJ</div>
                                 <div class="author-info">
                                     <h4 class="author-name">Sarah Johnson</h4>
                                     <span class="review-time">2 weeks ago</span>
@@ -2032,7 +2053,7 @@ p { margin-bottom: var(--space-md); }
                     <div class="testimonial-card google-review animate-on-scroll">
                         <div class="review-header">
                             <div class="review-author">
-                                <svg class="author-photo" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="24" cy="24" r="24" fill="#e5e7eb"/><circle cx="24" cy="18" r="8" fill="#9ca3af"/><path d="M6 44c0-10 8-16 18-16s18 6 18 16" fill="#9ca3af"/></svg>
+                                <div class="author-photo author-avatar" style="background:#34A853">MT</div>
                                 <div class="author-info">
                                     <h4 class="author-name">Mike Thompson</h4>
                                     <span class="review-time">1 month ago</span>
@@ -2056,7 +2077,7 @@ p { margin-bottom: var(--space-md); }
                     <div class="testimonial-card google-review animate-on-scroll">
                         <div class="review-header">
                             <div class="review-author">
-                                <svg class="author-photo" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="24" cy="24" r="24" fill="#e5e7eb"/><circle cx="24" cy="18" r="8" fill="#9ca3af"/><path d="M6 44c0-10 8-16 18-16s18 6 18 16" fill="#9ca3af"/></svg>
+                                <div class="author-photo author-avatar" style="background:#EA4335">JD</div>
                                 <div class="author-info">
                                     <h4 class="author-name">Jennifer Davis</h4>
                                     <span class="review-time">6 weeks ago</span>
@@ -2080,7 +2101,7 @@ p { margin-bottom: var(--space-md); }
                     <div class="testimonial-card google-review animate-on-scroll">
                         <div class="review-header">
                             <div class="review-author">
-                                <svg class="author-photo" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="24" cy="24" r="24" fill="#e5e7eb"/><circle cx="24" cy="18" r="8" fill="#9ca3af"/><path d="M6 44c0-10 8-16 18-16s18 6 18 16" fill="#9ca3af"/></svg>
+                                <div class="author-photo author-avatar" style="background:#FBBC05;color:#1a1a1a">RC</div>
                                 <div class="author-info">
                                     <h4 class="author-name">Robert Chen</h4>
                                     <span class="review-time">2 months ago</span>
@@ -2104,7 +2125,7 @@ p { margin-bottom: var(--space-md); }
                     <div class="testimonial-card google-review animate-on-scroll">
                         <div class="review-header">
                             <div class="review-author">
-                                <svg class="author-photo" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="24" cy="24" r="24" fill="#e5e7eb"/><circle cx="24" cy="18" r="8" fill="#9ca3af"/><path d="M6 44c0-10 8-16 18-16s18 6 18 16" fill="#9ca3af"/></svg>
+                                <div class="author-photo author-avatar" style="background:#7ED321">LM</div>
                                 <div class="author-info">
                                     <h4 class="author-name">Lisa Martinez</h4>
                                     <span class="review-time">3 months ago</span>
@@ -2144,22 +2165,30 @@ p { margin-bottom: var(--space-md); }
                         <h3>Our Values</h3>
                         <div class="values-grid">
                             <div class="value-card">
-                                <span class="value-icon">&#10084;&#65039;</span>
+                                <div class="value-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                                </div>
                                 <h4>Family &amp; Community</h4>
                                 <p>We treat every customer like family and give back to the community we call home.</p>
                             </div>
                             <div class="value-card">
-                                <span class="value-icon">&#128737;&#65039;</span>
+                                <div class="value-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2l8 4v6c0 5-3.5 9.5-8 11-4.5-1.5-8-6-8-11V6z"/></svg>
+                                </div>
                                 <h4>Integrity &amp; Honesty</h4>
                                 <p>We do business the right way &mdash; with transparency, fairness, and genuine care.</p>
                             </div>
                             <div class="value-card">
-                                <span class="value-icon">&#128296;</span>
+                                <div class="value-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6-7.6 7.6-1.6-1.6a1 1 0 0 0-1.4 1.4l2.3 2.3a1 1 0 0 0 1.4 0l8.3-8.3a1 1 0 0 0 0-1.4l-2.3-2.3a1 1 0 0 0-.7-.3z"/><path d="M3.7 20.3L2 22"/><path d="M20.3 3.7L17 7"/></svg>
+                                </div>
                                 <h4>Craftsmanship</h4>
                                 <p>Expert installation and quality that lasts &mdash; we take pride in doing the job right.</p>
                             </div>
                             <div class="value-card">
-                                <span class="value-icon">&#129309;</span>
+                                <div class="value-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                                </div>
                                 <h4>Team Culture</h4>
                                 <p>We value our workers with fair compensation, growth opportunities, and work-life balance.</p>
                             </div>
@@ -2177,7 +2206,10 @@ p { margin-bottom: var(--space-md); }
                 <div class="cta-content">
                     <h2>Ready to Transform Your Home?</h2>
                     <p>Experience the convenience of our mobile showroom and find the perfect windows and doors for your home.</p>
-                    <button class="btn btn-primary btn-large open-consultation-modal">FREE CONSULTATION</button>
+                    <div class="cta-buttons">
+                        <button class="btn btn-primary btn-large open-consultation-modal">FREE CONSULTATION</button>
+                        <a href="tel:+16154237450" class="btn btn-secondary btn-large">Call (615) 423-7450</a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -2369,6 +2401,40 @@ p { margin-bottom: var(--space-md); }
             });
         }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
         animateElements.forEach(function(el) { animateObserver.observe(el); });
+
+        // ---- Animated Stat Counters ----
+        var statNumbers = document.querySelectorAll('.stat-number[data-target]');
+        var statsObserved = false;
+
+        var statsObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting && !statsObserved) {
+                    statsObserved = true;
+                    statNumbers.forEach(function(el) {
+                        var target = parseFloat(el.getAttribute('data-target'));
+                        var suffix = el.getAttribute('data-suffix') || '';
+                        var decimals = parseInt(el.getAttribute('data-decimals') || '0', 10);
+                        var duration = 1500;
+                        var startTime = null;
+
+                        function animate(currentTime) {
+                            if (!startTime) startTime = currentTime;
+                            var progress = Math.min((currentTime - startTime) / duration, 1);
+                            var eased = 1 - Math.pow(1 - progress, 3);
+                            var current = eased * target;
+                            el.textContent = (decimals > 0 ? current.toFixed(decimals) : Math.floor(current)) + suffix;
+                            if (progress < 1) {
+                                requestAnimationFrame(animate);
+                            }
+                        }
+                        requestAnimationFrame(animate);
+                    });
+                }
+            });
+        }, { threshold: 0.3 });
+
+        var statsBar = document.querySelector('.stats-bar');
+        if (statsBar) statsObserver.observe(statsBar);
 
         // ---- Consultation Modal ----
         var modal = document.getElementById('consultationModal');
