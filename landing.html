@@ -5,16 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Bess Brothers Construction - Tennessee's trusted windows and doors replacement company. Experience our unique mobile showroom service. Free consultations available.">
     <title>Bess Brothers Construction - Windows & Doors Replacement | Mobile Showroom</title>
+    <link rel="canonical" href="https://bessbrothers.com/landing.html">
     <meta property="og:title" content="Bess Brothers Construction - Windows & Doors Replacement">
     <meta property="og:description" content="Tennessee's trusted windows and doors replacement company. Experience our unique mobile showroom service. Free consultations available.">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="en_US">
+    <meta property="og:url" content="https://bessbrothers.com/landing.html">
+    <meta property="og:image" content="https://bessbrothers.com/images/optimized/hero-bg-1024.jpg">
+    <meta property="og:site_name" content="Bess Brothers Construction">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Bess Brothers Construction - Windows & Doors Replacement">
+    <meta name="twitter:description" content="Tennessee's trusted windows and doors replacement company. Experience our unique mobile showroom service. Free consultations available.">
+    <meta name="twitter:image" content="https://bessbrothers.com/images/optimized/hero-bg-1024.jpg">
     <link rel="icon" type="image/jpeg" href="images/favicon.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script>emailjs.init("3Xvt4Jn3FfWA82tjr");</script>
+    <script>
+    window.LANDING_EMAILJS_CONFIG = {
+        publicKey: '3Xvt4Jn3FfWA82tjr',
+        serviceId: 'Bess Brothers Contact',
+        templateId: 'template_5rqiihp'
+    };
+    if (window.emailjs && window.LANDING_EMAILJS_CONFIG.publicKey) {
+        emailjs.init(window.LANDING_EMAILJS_CONFIG.publicKey);
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "HomeAndConstructionBusiness",
+        "name": "Bess Brothers Construction",
+        "url": "https://bessbrothers.com/landing.html",
+        "image": "https://bessbrothers.com/images/optimized/hero-bg-1024.jpg",
+        "telephone": "+1-615-423-7450",
+        "email": "business@bessbrothers.com",
+        "areaServed": [
+            "Nashville, Tennessee",
+            "Middle Tennessee"
+        ],
+        "description": "Windows and doors replacement company serving Nashville and Middle Tennessee with an in-home mobile showroom experience."
+    }
+    </script>
     <style>
 /* ============================================
    1. RESET & CUSTOM PROPERTIES
@@ -377,7 +410,12 @@ p { margin-bottom: var(--space-md); }
 
 .hero-gradient {
     background: linear-gradient(180deg, rgba(10, 22, 40, 0.7) 0%, rgba(30, 58, 95, 0.6) 50%, rgba(59, 112, 151, 0.5) 100%),
-                url('images/hero-bg.png') center/cover no-repeat;
+                url('images/optimized/hero-bg-1024.jpg') center/cover no-repeat;
+    background: linear-gradient(180deg, rgba(10, 22, 40, 0.7) 0%, rgba(30, 58, 95, 0.6) 50%, rgba(59, 112, 151, 0.5) 100%),
+                image-set(
+                    url('images/optimized/hero-bg-768.jpg') 1x,
+                    url('images/optimized/hero-bg-1024.jpg') 2x
+                ) center/cover no-repeat;
     width: 100%;
     min-height: 100vh;
     display: flex;
@@ -551,6 +589,11 @@ p { margin-bottom: var(--space-md); }
 .service-image {
     height: 250px;
     overflow: hidden;
+}
+
+.service-image picture {
+    display: block;
+    height: 100%;
 }
 
 .service-image img {
@@ -811,15 +854,25 @@ p { margin-bottom: var(--space-md); }
 }
 
 .faq-question {
+    width: 100%;
     padding: var(--space-lg);
     cursor: pointer;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    text-align: left;
+    background: none;
+    border: none;
+    font: inherit;
     font-weight: 600;
     color: var(--text-dark);
     transition: background 0.2s ease;
     min-height: 44px;
+}
+
+.faq-question:focus {
+    outline: 2px solid var(--primary-blue);
+    outline-offset: -2px;
 }
 
 .faq-question:hover {
@@ -1305,6 +1358,14 @@ p { margin-bottom: var(--space-md); }
     grid-column: span 2;
 }
 
+.modal-form .form-honeypot {
+    position: absolute !important;
+    left: -9999px !important;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
 .modal-form label {
     display: block;
     margin-bottom: 0.5rem;
@@ -1743,7 +1804,13 @@ p { margin-bottom: var(--space-md); }
                 <div class="services-grid">
                     <div class="service-card animate-on-scroll">
                         <div class="service-image">
-                            <img src="images/windows-service.png" alt="Professional window installation in a modern living room" loading="lazy">
+                            <picture>
+                                <source
+                                    srcset="images/optimized/windows-service-512.jpg 512w, images/optimized/windows-service-768.jpg 768w"
+                                    sizes="(max-width: 768px) 100vw, 50vw"
+                                    type="image/jpeg">
+                                <img src="images/optimized/windows-service-768.jpg" alt="Professional window installation in a modern living room" width="768" height="768" loading="lazy" decoding="async">
+                            </picture>
                         </div>
                         <div class="service-content">
                             <h3>Windows Replacement</h3>
@@ -1753,7 +1820,13 @@ p { margin-bottom: var(--space-md); }
                     </div>
                     <div class="service-card animate-on-scroll">
                         <div class="service-image">
-                            <img src="images/doors-service.png" alt="Elegant front door with sidelights and warm interior glow" loading="lazy">
+                            <picture>
+                                <source
+                                    srcset="images/optimized/doors-service-512.jpg 512w, images/optimized/doors-service-768.jpg 768w"
+                                    sizes="(max-width: 768px) 100vw, 50vw"
+                                    type="image/jpeg">
+                                <img src="images/optimized/doors-service-768.jpg" alt="Elegant front door with sidelights and warm interior glow" width="768" height="768" loading="lazy" decoding="async">
+                            </picture>
                         </div>
                         <div class="service-content">
                             <h3>Doors Replacement</h3>
@@ -1868,38 +1941,38 @@ p { margin-bottom: var(--space-md); }
                 <h2 class="section-title">Frequently Asked Questions</h2>
                 <div class="faq-container">
                     <div class="faq-item">
-                        <div class="faq-question" role="button" tabindex="0" aria-expanded="false">How long does window installation take?</div>
-                        <div class="faq-answer">
+                        <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-1" id="faq-question-1">How long does window installation take?</button>
+                        <div class="faq-answer" id="faq-answer-1" role="region" aria-labelledby="faq-question-1">
                             <p>Most window installations are completed in 1-2 days, depending on the number of windows. We work efficiently while ensuring quality installation.</p>
                         </div>
                     </div>
                     <div class="faq-item">
-                        <div class="faq-question" role="button" tabindex="0" aria-expanded="false">What warranty comes with new windows?</div>
-                        <div class="faq-answer">
+                        <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-2" id="faq-question-2">What warranty comes with new windows?</button>
+                        <div class="faq-answer" id="faq-answer-2" role="region" aria-labelledby="faq-question-2">
                             <p>Pella windows come with a lifetime limited warranty on the frame and sash, 20-year warranty on glass, and 10-year warranty on hardware. Our installation is also fully warranted.</p>
                         </div>
                     </div>
                     <div class="faq-item">
-                        <div class="faq-question" role="button" tabindex="0" aria-expanded="false">Are tax credits available?</div>
-                        <div class="faq-answer">
+                        <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-3" id="faq-question-3">Are tax credits available?</button>
+                        <div class="faq-answer" id="faq-answer-3" role="region" aria-labelledby="faq-question-3">
                             <p>Yes! Qualifying ENERGY STAR windows can earn you up to $600 in federal tax credits. We'll provide all necessary documentation for your tax filing.</p>
                         </div>
                     </div>
                     <div class="faq-item">
-                        <div class="faq-question" role="button" tabindex="0" aria-expanded="false">What brands do you carry?</div>
-                        <div class="faq-answer">
-                            <p>We carry top-tier brands including Pella, Andersen, and Marvin. Our mobile showroom lets you see and compare actual product samples side by side in the comfort of your home.</p>
+                        <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-4" id="faq-question-4">What window brand do you carry?</button>
+                        <div class="faq-answer" id="faq-answer-4" role="region" aria-labelledby="faq-question-4">
+                            <p>We specialize in Pella windows. Our mobile showroom lets you see and compare real Pella product samples side by side in the comfort of your home.</p>
                         </div>
                     </div>
                     <div class="faq-item">
-                        <div class="faq-question" role="button" tabindex="0" aria-expanded="false">Do I need to be home during installation?</div>
-                        <div class="faq-answer">
+                        <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-5" id="faq-question-5">Do I need to be home during installation?</button>
+                        <div class="faq-answer" id="faq-answer-5" role="region" aria-labelledby="faq-question-5">
                             <p>We recommend having someone present at the start of installation to go over final details. After that, our team works independently. We'll walk you through everything upon completion before we leave.</p>
                         </div>
                     </div>
                     <div class="faq-item">
-                        <div class="faq-question" role="button" tabindex="0" aria-expanded="false">How do I prepare for installation day?</div>
-                        <div class="faq-answer">
+                        <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-6" id="faq-question-6">How do I prepare for installation day?</button>
+                        <div class="faq-answer" id="faq-answer-6" role="region" aria-labelledby="faq-question-6">
                             <p>Clear about 3 feet of space around each window or door being replaced. Move fragile items away from work areas. We handle the rest, including laying down protective coverings and cleaning up when we're done.</p>
                         </div>
                     </div>
@@ -1912,26 +1985,24 @@ p { margin-bottom: var(--space-md); }
              ============================================ -->
         <section class="testimonials" id="reviews">
             <div class="container">
-                <h2 class="section-title">
-                    What Our Customers Say
-                    <div class="google-reviews-badge">
-                        <svg class="google-badge-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/>
-                            <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
-                            <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
-                            <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
-                        </svg>
-                        <span class="business-rating">4.8</span>
-                        <div class="google-stars-small">
-                            <span class="star filled">&#9733;</span>
-                            <span class="star filled">&#9733;</span>
-                            <span class="star filled">&#9733;</span>
-                            <span class="star filled">&#9733;</span>
-                            <span class="star filled">&#9733;</span>
-                        </div>
-                        <span class="rating-count">Google Reviews</span>
+                <h2 class="section-title">What Our Customers Say</h2>
+                <div class="google-reviews-badge">
+                    <svg class="google-badge-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/>
+                        <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                        <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+                        <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+                    </svg>
+                    <span class="business-rating">4.8</span>
+                    <div class="google-stars-small">
+                        <span class="star filled">&#9733;</span>
+                        <span class="star filled">&#9733;</span>
+                        <span class="star filled">&#9733;</span>
+                        <span class="star filled">&#9733;</span>
+                        <span class="star filled">&#9733;</span>
                     </div>
-                </h2>
+                    <span class="rating-count">Google Reviews</span>
+                </div>
                 <div class="testimonials-grid">
                     <!-- Review 1 -->
                     <div class="testimonial-card google-review animate-on-scroll">
@@ -2138,18 +2209,12 @@ p { margin-bottom: var(--space-md); }
                     <p>Email: <a href="mailto:business@bessbrothers.com">business@bessbrothers.com</a></p>
                 </div>
                 <div class="footer-column">
-                    <h4>Follow Us</h4>
-                    <div class="social-links">
-                        <a href="#" aria-label="Facebook">
-                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                        </a>
-                        <a href="#" aria-label="Instagram">
-                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-                        </a>
-                        <a href="#" aria-label="Google">
-                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
-                        </a>
-                    </div>
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="tel:+16154237450">Call (615) 423-7450</a></li>
+                        <li><a href="mailto:business@bessbrothers.com">Email the team</a></li>
+                        <li><a href="#reviews">Read customer reviews</a></li>
+                    </ul>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -2166,7 +2231,9 @@ p { margin-bottom: var(--space-md); }
             <button class="modal-close" aria-label="Close modal">&times;</button>
             <h2 id="modal-title">Schedule Your Free Consultation</h2>
             <p class="modal-subtitle">Let us bring our mobile showroom to you!</p>
-            <form class="consultation-form modal-form" id="consultationForm">
+            <form class="consultation-form modal-form" id="consultationForm" method="post" novalidate>
+                <input class="form-honeypot" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+                <input type="hidden" name="form-started-at" id="form-started-at">
                 <div class="form-row">
                     <div class="form-group">
                         <label for="modal-first-name">First Name *</label>
@@ -2214,9 +2281,11 @@ p { margin-bottom: var(--space-md); }
         const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
         const navMenu = document.querySelector('.nav-menu');
 
+        mobileMenuToggle.setAttribute('aria-expanded', 'false');
         mobileMenuToggle.addEventListener('click', function() {
-            navMenu.classList.toggle('active');
-            this.classList.toggle('active');
+            var isOpen = navMenu.classList.toggle('active');
+            this.classList.toggle('active', isOpen);
+            this.setAttribute('aria-expanded', String(isOpen));
         });
 
         // Close menu on nav link click
@@ -2224,17 +2293,19 @@ p { margin-bottom: var(--space-md); }
             link.addEventListener('click', function() {
                 navMenu.classList.remove('active');
                 mobileMenuToggle.classList.remove('active');
+                mobileMenuToggle.setAttribute('aria-expanded', 'false');
             });
         });
 
         // ---- Smooth Scroll ----
-        document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+        document.querySelectorAll('a[href^="#"]:not([href="#"])').forEach(function(anchor) {
             anchor.addEventListener('click', function(e) {
+                var href = this.getAttribute('href');
+                if (!href || href === '#') return;
+                var target = document.querySelector(href);
+                if (!target) return;
                 e.preventDefault();
-                var target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
         });
 
@@ -2286,14 +2357,6 @@ p { margin-bottom: var(--space-md); }
                     this.setAttribute('aria-expanded', 'true');
                 }
             });
-
-            // Keyboard support
-            question.addEventListener('keydown', function(e) {
-                if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    this.click();
-                }
-            });
         });
 
         // ---- Scroll Animations ----
@@ -2335,7 +2398,13 @@ p { margin-bottom: var(--space-md); }
         });
 
         // ---- Form Submission ----
-        document.getElementById('consultationForm').addEventListener('submit', async function(e) {
+        var consultationForm = document.getElementById('consultationForm');
+        var formStartedAtField = document.getElementById('form-started-at');
+        if (formStartedAtField) {
+            formStartedAtField.value = String(Date.now());
+        }
+
+        consultationForm.addEventListener('submit', async function(e) {
             e.preventDefault();
             var submitBtn = this.querySelector('button[type="submit"]');
             var originalText = submitBtn.textContent;
@@ -2352,13 +2421,16 @@ p { margin-bottom: var(--space-md); }
             }
 
             try {
-                await sendEmail(data);
+                await sendConsultationRequest(data);
                 showNotification('success', "Consultation scheduled! We'll contact you within 24 hours.");
                 this.reset();
+                if (formStartedAtField) {
+                    formStartedAtField.value = String(Date.now());
+                }
                 setTimeout(function() { modal.classList.remove('show'); }, 2000);
             } catch (error) {
                 console.error('Error:', error);
-                showNotification('error', 'Error scheduling consultation. Please try again or call us directly.');
+                showNotification('error', 'Unable to schedule online right now. Please call (615) 423-7450.');
             } finally {
                 submitBtn.disabled = false;
                 submitBtn.textContent = originalText;
@@ -2368,6 +2440,17 @@ p { margin-bottom: var(--space-md); }
 
     // ---- Form Validation ----
     function validateForm(data) {
+        if (data.website && data.website.trim() !== '') {
+            showNotification('error', 'Unable to process your request. Please try again.');
+            return false;
+        }
+
+        var startedAt = parseInt(data['form-started-at'], 10);
+        if (Number.isFinite(startedAt) && Date.now() - startedAt < 2000) {
+            showNotification('error', 'Please take a moment to complete the form.');
+            return false;
+        }
+
         var requiredFields = ['first-name', 'last-name', 'email', 'phone', 'service'];
         for (var i = 0; i < requiredFields.length; i++) {
             var field = requiredFields[i];
@@ -2389,16 +2472,19 @@ p { margin-bottom: var(--space-md); }
         return true;
     }
 
-    // ---- EmailJS Send ----
-    async function sendEmail(data) {
-        var SERVICE_ID = 'Bess Brothers Contact';
-        var TEMPLATE_ID = 'template_5rqiihp';
-        var PUBLIC_KEY = '3Xvt4Jn3FfWA82tjr';
+    // ---- Frontend Send (EmailJS) ----
+    async function sendConsultationRequest(data) {
+        var config = window.LANDING_EMAILJS_CONFIG || {};
         var serviceLabels = {
             'windows': 'Windows Replacement',
             'doors': 'Doors Replacement',
             'both': 'Both Windows & Doors'
         };
+
+        if (!window.emailjs || !config.serviceId || !config.templateId || !config.publicKey) {
+            throw new Error('Email service is not configured');
+        }
+
         var templateParams = {
             from_name: data['first-name'] + ' ' + data['last-name'],
             from_email: data.email,
@@ -2407,7 +2493,8 @@ p { margin-bottom: var(--space-md); }
             message: data.message || 'No additional notes.',
             to_email: 'business@bessbrothers.com'
         };
-        return emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY);
+
+        return emailjs.send(config.serviceId, config.templateId, templateParams, config.publicKey);
     }
 
     // ---- Notification System ----
