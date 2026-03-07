@@ -771,6 +771,7 @@ p { margin-bottom: var(--space-md); }
     right: calc(-50% + 28px);
     height: 2px;
     background: rgba(126, 211, 33, 0.4);
+    z-index: 0;
 }
 
 .process-step::before {
@@ -795,10 +796,14 @@ p { margin-bottom: var(--space-md); }
     font-size: 1.1rem;
     color: var(--text-white);
     margin-bottom: var(--space-sm);
+    position: relative;
+    z-index: 1;
 }
 
 .process-step p {
     color: rgba(255, 255, 255, 0.7);
+    position: relative;
+    z-index: 1;
     font-size: 0.95rem;
     line-height: 1.5;
 }
@@ -1153,7 +1158,7 @@ p { margin-bottom: var(--space-md); }
    14. CONTACT / CTA SECTION
    ============================================ */
 .cta-section {
-    padding: var(--space-4xl) 0;
+    padding: var(--space-2xl) 0;
     background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-darker) 50%, var(--primary-blue) 100%);
     color: var(--text-white);
     position: relative;
@@ -1199,14 +1204,14 @@ p { margin-bottom: var(--space-md); }
 .footer {
     background: var(--bg-darker);
     color: var(--text-white);
-    padding: var(--space-3xl) 0 var(--space-lg);
+    padding: var(--space-xl) 0 var(--space-md);
 }
 
 .footer-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: var(--space-xl);
-    margin-bottom: var(--space-xl);
+    gap: var(--space-lg);
+    margin-bottom: var(--space-md);
 }
 
 .footer-column h4 {
@@ -1599,18 +1604,13 @@ p { margin-bottom: var(--space-md); }
     .process-steps {
         flex-direction: column;
         align-items: center;
-        gap: var(--space-xl);
+        gap: var(--space-md);
     }
 
     .process-step { max-width: 300px; }
 
     .process-step:not(:last-child)::after {
-        top: 48px;
-        left: 50%;
-        right: auto;
-        width: 2px;
-        height: calc(100% + var(--space-xl));
-        transform: translateX(-50%);
+        display: none;
     }
 
     .cta-buttons {
@@ -2106,35 +2106,6 @@ p { margin-bottom: var(--space-md); }
          ============================================ -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-grid">
-                <div class="footer-column">
-                    <h4>About Bess Brothers</h4>
-                    <p>Your trusted partner for windows and doors replacement with our unique mobile showroom service.</p>
-                </div>
-                <div class="footer-column">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#reviews">Reviews</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h4>Contact Info</h4>
-                    <p>Phone: <a href="tel:+16154237450">(615) 423-7450</a></p>
-                    <p>Email: <a href="mailto:business@bessbrothers.com">business@bessbrothers.com</a></p>
-                </div>
-                <div class="footer-column">
-                    <h4>Connect</h4>
-                    <ul>
-                        <li><a href="tel:+16154237450">Call (615) 423-7450</a></li>
-                        <li><a href="mailto:business@bessbrothers.com">Email the team</a></li>
-                        <li><a href="#reviews">Read customer reviews</a></li>
-                    </ul>
-                </div>
-            </div>
             <div class="footer-bottom">
                 <p>&copy; 2026 Bess Brothers Construction. All rights reserved.</p>
             </div>

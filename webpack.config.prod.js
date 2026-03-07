@@ -28,7 +28,6 @@ module.exports = merge(common, {
         { from: 'images', to: 'images', noErrorOnMissing: true },
         { from: 'styles.css', to: 'styles.css' },
         { from: 'script.js', to: 'script.js' },
-        { from: 'favicon.ico', to: 'favicon.ico' },
         { from: 'robots.txt', to: 'robots.txt' },
         { from: 'site.webmanifest', to: 'site.webmanifest' },
       ],
