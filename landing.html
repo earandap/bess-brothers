@@ -436,16 +436,6 @@ p { margin-bottom: var(--space-md); }
     background-size: cover;
 }
 
-.hero-gradient::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 80px;
-    background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg"><path d="M0,80 C480,20 960,20 1440,80 L1440,80 L0,80 Z" fill="white"/></svg>') no-repeat bottom;
-    background-size: cover;
-}
 
 .hero-content {
     text-align: center;
@@ -1536,6 +1526,13 @@ p { margin-bottom: var(--space-md); }
 }
 
 @media (max-width: 768px) {
+    .footer-bottom-content {
+        flex-direction: column;
+        gap: var(--space-sm);
+    }
+    .footer-bottom-content .footer-badges {
+        position: static;
+    }
     .nav-menu { display: none; }
     .mobile-menu-toggle { display: flex; }
 
