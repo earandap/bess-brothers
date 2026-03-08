@@ -1280,12 +1280,29 @@ p { margin-bottom: var(--space-md); }
 }
 
 .footer-bottom {
-    text-align: center;
-    padding-top: var(--space-xl);
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    opacity: 0.8;
+    padding: var(--space-md) 0;
+    background: var(--gray-light);
     font-size: var(--font-size-sm);
+    color: var(--text-dark);
 }
+
+.footer-bottom-content {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.footer-bottom-content .footer-badges {
+    position: absolute;
+    left: 0;
+}
+
+.footer-bottom-content p {
+    width: 100%;
+    text-align: center;
+    margin: 0;
+}
+
 
 /* ============================================
    16. MODAL
@@ -2104,13 +2121,18 @@ p { margin-bottom: var(--space-md); }
     <!-- ============================================
          FOOTER
          ============================================ -->
-    <footer class="footer">
+    <div class="footer-bottom">
         <div class="container">
-            <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <div class="footer-badges">
+                    <a href="https://www.bbb.org/us/tn/old-hickory/profile/home-improvement/bess-brothers-construction-llc-0573-37380442/#sealclick" target="_blank" rel="nofollow">
+                        <img src="https://m.bbb.org/terminuscontent/dist/img/business-profile/accreditation/BBB_ABSeal_H_US_2025.svg?tx=f_svg,w_175" style="border: 0; height: 36px;" alt="BBB Accredited Business">
+                    </a>
+                </div>
                 <p>&copy; 2026 Bess Brothers Construction. All rights reserved.</p>
             </div>
         </div>
-    </footer>
+    </div>
 
     <!-- ============================================
          CONSULTATION MODAL
@@ -2439,5 +2461,6 @@ p { margin-bottom: var(--space-md); }
         }, 5000);
     }
     </script>
+
 </body>
 </html>
